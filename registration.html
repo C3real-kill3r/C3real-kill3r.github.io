@@ -11,7 +11,7 @@
                     <img src="logo4.png">
                 </div>
                 <ul class="main-nav">
-                    <li><a href="diary_notes.html">DIARY</a></li>
+                    <li><a href="index.html">HOME</a></li>
                 </ul>
             </div>
         </header> 
@@ -24,8 +24,8 @@
             <input type="text" id="lname" placeholder="Enter Your Last name">
             <input type="text" id="username" placeholder="Enter Username">
             <input type="email" id="email" placeholder="Enter Email Adress">
-            <input type="password" id="password" placeholder="Enter Password" required>
-            <input type="password" id="con_password" placeholder="Confirm Your Password" required>
+            <input type="password" id="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter and a special character, and at least 6 or more characters" required>
+            <input type="password" id="con_password" placeholder="Confirm Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter and a special character, and at least 6 or more characters" required>
             <input type="submit" id="RegButton" value="Register">
         </form>
     
