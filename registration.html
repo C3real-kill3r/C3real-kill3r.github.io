@@ -20,9 +20,10 @@
         <h6>Register</h6>
         <div id="regResponse"><p class="res"><small></small></p></div>
         <form id="Register">
-            <input type="text" id="fname" placeholder="Enter Your First name">
-            <input type="text" id="lname" placeholder="Enter Your Last name">
-            <input type="text" id="username" placeholder="Enter Username">
+        <form id="Register">
+            <input type="text" id="fname" placeholder="Enter Your First name" pattern="\s*(\S\s*){3,}" title="First name should have at least 3 characters." maxlength="20">
+            <input type="text" id="lname" placeholder="Enter Your Last name" pattern="\s*(\S\s*){3,}" title="Last name should have at least 3 characters." maxlength="20">
+            <input type="text" id="username" placeholder="Enter Username" pattern="\s*(\S\s*){5,}" title="Username should have at least 5 characters." maxlength="20">
             <input type="email" id="email" placeholder="Enter Email Adress">
             <input type="password" id="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter and a special character, and at least 6 or more characters" required>
             <input type="password" id="con_password" placeholder="Confirm Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter and a special character, and at least 6 or more characters" required>
