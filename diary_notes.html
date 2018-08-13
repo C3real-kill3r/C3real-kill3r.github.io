@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Diary</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    <body>
+    <header>
+        <div class="row" id="head">
+                <div class="logo">
+                    <img src="logo4.png">
+                </div>
+                <ul class="main-nav">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="active"><a href="">VIEW ENTRIES</a></li>
+                    <li><a href="new_entry.html">NEW ENTRY</a></li>
+                    <li><a href="" id="logout" onclick="logout()">LOGOUT</a></li>
+                </ul>
+        </div>
+    
+        <div class="container">
+        <h4>Welcome to your diary <div id="word"><small class="welcomeNote"></small></div></h4>
+        <div id="tform">
+        
+        </div>
+        </div>
+        <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" id="popUp">
+    <span class="close">&times;</span>
+    <p id="comment"></p>
+  </div>
+
+</div>
+    </header>
+        <script src="java.js"></script>
+        <script src="diary_notes.js"></script>
+    </body>
+    </head>
+</html>
