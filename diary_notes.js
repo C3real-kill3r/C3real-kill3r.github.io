@@ -17,8 +17,8 @@ fetch("https://diary234.herokuapp.com/api/v2/entries", {
                 let diaryPosts =`<div id="resTable">
                 <ul class="responsive-table" id="table">
                 <li class="table-header">
-                  <div class="col col-1">Id</div>
-                  <div class="col col-2">title</div>
+                  <div class="col col-1">title</div>
+                  <div class="col col-2"></div>
                   <div class="col col-3">date</div>
                   <div class="col col-4"></div>
                   <div class="col col-5"></div>
@@ -26,8 +26,8 @@ fetch("https://diary234.herokuapp.com/api/v2/entries", {
                 </li>`;
                 Object.keys(data).forEach(function(entr){
                   diaryPosts +=`<li class="table-row">
-                    <div class="col col-1" id="commentId">${data[entr]["entry_id"]}</div>
-                      <div class="col col-2" id="title">${data[entr]["title"]}</div>
+                    <div class="col col-1" id="title">${data[entr]["title"]}</div>
+                      <div class="col col-2" id=""></div>
                     <div class="col col-3" id="date">${data[entr]["time"]}</div>
                     <div class="col col-6"><input type="submit" id="myBtn" value="view" onclick="viewEntry(${data[entr]["entry_id"]})"></div>
                     <div class="col col-4"><input type="submit" id="edit" value="edit"></div>
