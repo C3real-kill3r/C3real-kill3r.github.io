@@ -30,7 +30,7 @@ fetch("https://diary234.herokuapp.com/api/v2/entries", {
                       <div class="col col-2" id=""></div>
                     <div class="col col-3" id="date">${data[entr]["time"]}</div>
                     <div class="col col-6"><input type="submit" id="myBtn" value="view" onclick="viewEntry(${data[entr]["entry_id"]})"></div>
-                    <div class="col col-4"><input type="submit" id="edit" value="edit"></div>
+                    <div class="col col-4"><input type="submit" id="myBtn1" value="edit" onclick="editPost('${data[entr]["entry_id"]}','${data[entr]["comment"]}','${data[entr]["title"]}')"></div>
                     <div class="col col-5"><input type="submit" id="delete" value="delete" onclick="dlt(${data[entr]["entry_id"]})"></div>
                   </li>`;
                 });
@@ -81,3 +81,58 @@ function dlt(entry_id){
         window.location.replace("diary_notes.html");
     }
     }
+
+let entryId;
+function editPost(entry_id, comment, title){
+  entryId = entry_id;
+  modal2.style.display="block";
+  document.getElementById("editForm").innerHTML = `<form id="entryNew" onsubmit="editEntry(${entry_id})">
+                <p>want to make it more informative or interesting? Go ahead!</p>
+                <div id="editPost">
+                <p class="entryMessage"></p>
+                <br><br>
+                Title:
+                <input type="text" id="title" maxlength="20" value="${title}" required>
+                </label><br><br>
+                <br><br>
+                <label>
+                My note:<br>
+                <textarea rows="220" cols="150" id="comment" required>
+                ${comment}
+                </textarea>
+                </label>
+                <br><br>
+                <input type="submit" value="Edit it!">
+                </form>`;
+}
+function editEntry(){
+  event.preventDefault();
+  let title = document.forms["entryNew"]["title"];
+  let comment = document.forms["entryNew"]["comment"];
+
+    credentials = {
+        title: title.value,
+        comment: comment.value
+    };
+  let url = "https://diary234.herokuapp.com/api/v2/entries/"+entryId;
+  fetch(url, {
+      method : "PUT", headers : {
+        "Content-Type":"application/json", 
+        "x-access-token":token},
+        body: JSON.stringify(credentials)
+  }).then((response)=>response.json())
+  .then((data)=>{
+    if (data["message"] == "entry successfully modified!!"){
+      window.location.replace("diary_notes.html");
+      modal2.style.display ="none";
+    }
+    else{
+      console.log(data)
+      const RegResponse = Object(data.message)
+      let Message = document.getElementById("editPost");
+      const FetchedMessage = `<p class"entryMessage">${RegResponse}</p>`
+      Message.innerHTML = FetchedMessage
+      modal2.style.display ="block";
+  }})
+  .catch((error) =>console.log(error))
+}
