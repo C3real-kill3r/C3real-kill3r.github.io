@@ -34,7 +34,7 @@ fetch("https://apdy.herokuapp.com/api/v2/entries", {
                       <div class="col col-2" id="title"></div>
                     <div class="col col-3" id="date">${data[entr]["time"]}</div>
                     <div class="col col-6"><input type="submit" id="myBtn" value="view" onclick="viewEntry(${data[entr]["entry_id"]})"></div>
-                    <div class="col col-4"><input type="submit" id="myBtn1" value="edit" onclick="editPost('${data[entr]["entry_id"]}','${data[entr]["comment"]}','${data[entr]["title"]}')"></div>
+                    <div class="col col-4"><input type="submit" id="myBtn1" value="edit" onclick="editPost('${data[entr]["entry_id"]}','${data[entr]["title"]}','${data[entr]["comment"]}')"></div>
                     <div class="col col-5"><input type="submit" id="delete" value="delete" onclick="dlt(${data[entr]["entry_id"]})"></div>
                   </li>`;
                 });
@@ -86,7 +86,7 @@ function dlt(entry_id){
     }
     }
 
-function editPost(entry_id, comment, title){
+function editPost(entry_id, title, comment){
   modal2.style.display="block";
   document.getElementById("editForm").innerHTML = `<form id="entryNew" onsubmit="editEntry(${entry_id})">
                 <p>want to make it more informative or interesting? Go ahead!</p>
