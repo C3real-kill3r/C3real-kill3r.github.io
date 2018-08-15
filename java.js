@@ -16,3 +16,22 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+var modal2 = document.getElementById('myModal2');
+var btn = document.getElementById("myBtn1");
+
+var span = document.getElementsByClassName("close1")[0];
+
+/*btn.onclick = function() {
+    modal.style.display = "block";
+}*/
+
+span.onclick = function() {
+    modal2.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
