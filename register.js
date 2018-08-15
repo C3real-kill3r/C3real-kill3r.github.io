@@ -15,7 +15,7 @@ document.getElementById("Register").addEventListener("submit", function (event) 
         password: password.value,
         con_password: con_password.value
     };
-    fetch("https://diary234.herokuapp.com/api/v2/auth/signup", {
+    fetch("https://c3real.herokuapp.com/api/v2/auth/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

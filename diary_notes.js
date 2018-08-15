@@ -1,5 +1,5 @@
 let token = JSON.parse(localStorage.getItem('token'));
-fetch("https://diary234.herokuapp.com/api/v2/entries", {
+fetch("https://c3real.herokuapp.com/api/v2/entries", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const logout = () => {
   }
 
 function viewEntry(entry_id){
-    let url = "https://diary234.herokuapp.com/api/v2/entries/"+entry_id;
+    let url = "https://c3real.herokuapp.com/api/v2/entries/"+entry_id;
     fetch(url, {
         method : "GET", headers : {
           "Content-Type":"application/json", 
@@ -66,7 +66,7 @@ function viewEntry(entry_id){
 }
 
 function dlt(entry_id){
-  let url = "https://diary234.herokuapp.com/api/v2/entries/"+entry_id;
+  let url = "https://c3real.herokuapp.com/api/v2/entries/"+entry_id;
   if(window.confirm("Are you sure you want to delete this entry?")){
   fetch(url, {
       method:"DELETE",
@@ -118,7 +118,7 @@ function editEntry(){
         title: title.value,
         comment: comment.value
     };
-  let url = "https://diary234.herokuapp.com/api/v2/entries/"+entryId;
+  let url = "https://c3real.herokuapp.com/api/v2/entries/"+entryId;
   fetch(url, {
       method : "PUT", headers : {
         "Content-Type":"application/json", 
