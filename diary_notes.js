@@ -14,6 +14,10 @@ fetch("https://diary234.herokuapp.com/api/v2/entries", {
                 window.location.replace("login.html");
             }
             else{
+                /*let Message = document.getElementById("word");
+                const FetchedMessage = `<p class"welcomeNote">${data[entr]["username"]}</p>`
+                Message.innerHTML = FetchedMessage*/
+
                 let diaryPosts =`<div id="resTable">
                 <ul class="responsive-table" id="table">
                 <li class="table-header">
@@ -26,8 +30,8 @@ fetch("https://diary234.herokuapp.com/api/v2/entries", {
                 </li>`;
                 Object.keys(data).forEach(function(entr){
                   diaryPosts +=`<li class="table-row">
-                    <div class="col col-1" id="title">${data[entr]["title"]}</div>
-                      <div class="col col-2" id=""></div>
+                    <div class="col col-1" id="commentId">${data[entr]["title"]}</div>
+                      <div class="col col-2" id="title"></div>
                     <div class="col col-3" id="date">${data[entr]["time"]}</div>
                     <div class="col col-6"><input type="submit" id="myBtn" value="view" onclick="viewEntry(${data[entr]["entry_id"]})"></div>
                     <div class="col col-4"><input type="submit" id="myBtn1" value="edit" onclick="editPost('${data[entr]["entry_id"]}','${data[entr]["comment"]}','${data[entr]["title"]}')"></div>
