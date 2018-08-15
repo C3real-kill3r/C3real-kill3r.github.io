@@ -86,9 +86,7 @@ function dlt(entry_id){
     }
     }
 
-let entryId;
 function editPost(entry_id, comment, title){
-  entryId = entry_id;
   modal2.style.display="block";
   document.getElementById("editForm").innerHTML = `<form id="entryNew" onsubmit="editEntry(${entry_id})">
                 <p>want to make it more informative or interesting? Go ahead!</p>
