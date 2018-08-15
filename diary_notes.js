@@ -95,6 +95,7 @@ function editPost(entry_id, comment, title){
                 <div id="editPost">
                 <p class="entryMessage"></p>
                 <br><br>
+                <br><br>
                 Title:
                 <input type="text" id="title" maxlength="20" value="${title}" required>
                 </label><br><br>
