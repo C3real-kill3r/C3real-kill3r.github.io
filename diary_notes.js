@@ -88,7 +88,7 @@ function dlt(entry_id){
 
 function editPost(entry_id, title, comment){
   modal2.style.display="block";
-  document.getElementById("editForm").innerHTML = `<form id="entryNew" onsubmit="editEntry(${entry_id})">
+  document.getElementById("editForm").innerHTML = `<form id="entryNew">
                 <p>want to make it more informative or interesting? Go ahead!</p>
                 <div id="editPost">
                 <p class="entryMessage"></p>
@@ -105,10 +105,10 @@ function editPost(entry_id, title, comment){
                 </textarea>
                 </label>
                 <br><br>
-                <input type="submit" value="Edit it!">
+                <input type="submit" value="Edit it!" onclick="editEntry(${entry_id})">
                 </form>`;
 }
-function editEntry(){
+function editEntry(entryId){
   event.preventDefault();
   let title = document.forms["entryNew"]["title"];
   let comment = document.forms["entryNew"]["comment"];
