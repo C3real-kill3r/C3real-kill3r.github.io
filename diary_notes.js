@@ -29,12 +29,13 @@ fetch("https://apdy.herokuapp.com/api/v2/entries", {
                   <div class="col col-6"></div>
                 </li>`;
                 Object.keys(data).forEach(function(entr){
+                  let comment = "`"+data[entr]["comment"]+"`";
                   diaryPosts +=`<li class="table-row">
                     <div class="col col-1" id="commentId">${data[entr]["title"]}</div>
                       <div class="col col-2" id="title"></div>
                     <div class="col col-3" id="date">${data[entr]["time"]}</div>
                     <div class="col col-6"><input type="submit" id="myBtn" value="view" onclick="viewEntry(${data[entr]["entry_id"]})"></div>
-                    <div class="col col-4"><input type="submit" id="myBtn1" value="edit" onclick="editPost('${data[entr]["entry_id"]}','${data[entr]["title"]}','${data[entr]["comment"]}')"></div>
+                    <div class="col col-4"><input type="submit" id="myBtn1" value="edit" onclick="editPost('${data[entr]["entry_id"]}','${data[entr]["title"]}',${comment})"></div>
                     <div class="col col-5"><input type="submit" id="delete" value="delete" onclick="dlt(${data[entr]["entry_id"]})"></div>
                   </li>`;
                 });
