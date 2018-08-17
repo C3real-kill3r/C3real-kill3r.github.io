@@ -7,7 +7,7 @@ document.getElementById("LoginForm").addEventListener("submit", function (event)
         username: username.value,
         password: password.value
     };
-    fetch("https://apdy.herokuapp.com/api/v2/auth/login", {
+    fetch("https://c3real.herokuapp.com/api/v2/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -8,7 +8,7 @@ document.getElementById("entryNew").addEventListener("submit", function (event) 
           title: title.value,
           comment: comment.value
       };
-      fetch("https://apdy.herokuapp.com/api/v2/entries", {
+      fetch("https://c3real.herokuapp.com/api/v2/entries", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",
