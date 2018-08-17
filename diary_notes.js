@@ -109,7 +109,7 @@ function editPost(entry_id, title, comment){
                 <input type="submit" value="Edit it!" onclick="editEntry(${entry_id})">
                 </form>`;
 }
-function editEntry(entryId){
+function editEntry(entry_id){
   event.preventDefault();
   let title = document.forms["entryNew"]["title"];
   let comment = document.forms["entryNew"]["comment"];
@@ -118,7 +118,7 @@ function editEntry(entryId){
         title: title.value,
         comment: comment.value
     };
-  let url = "https://apdy.herokuapp.com/api/v2/entries/"+entryId;
+  let url = "https://apdy.herokuapp.com/api/v2/entries/"+entry_id;
   fetch(url, {
       method : "PUT", headers : {
         "Content-Type":"application/json", 
