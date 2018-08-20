@@ -28,7 +28,8 @@ document.getElementById("LoginForm").addEventListener("submit", function (event)
               let Message = document.getElementById("logResponse");
               const FetchedMessage = `<p class"res">${RegResponse}</p>`
               Message.innerHTML = FetchedMessage
-            }
+            } 
+            
         })
         .catch(err => console.log(err));
   })});
