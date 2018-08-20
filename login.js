@@ -29,7 +29,6 @@ document.getElementById("LoginForm").addEventListener("submit", function (event)
               const FetchedMessage = `<p class"res">${RegResponse}</p>`
               Message.innerHTML = FetchedMessage
             } 
-            
         })
         .catch(err => console.log(err));
   })});
