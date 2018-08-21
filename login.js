@@ -23,7 +23,7 @@ document.getElementById("LoginForm").addEventListener("submit", function (event)
             }
             else{
               console.log(data["message"]);
-              console.log(data)
+              //console.log(data)
               const RegResponse = Object(data.message)
               let Message = document.getElementById("logResponse");
               const FetchedMessage = `<p class"res">${RegResponse}</p>`
