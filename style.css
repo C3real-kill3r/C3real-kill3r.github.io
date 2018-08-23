@@ -478,6 +478,7 @@ input[type=submit]:hover {
     padding-top: 20px;
     height: 400px;
     opacity: 0.9;
+    overflow: auto;
     border: 1px solid #888;
     width: 50%;
     border-radius: 20px;
@@ -504,6 +505,7 @@ input[type=submit]:hover {
     padding-top: 20px;
     height: 400px;
     opacity: 0.9;
+    overflow: auto;
     border: 1px solid #888;
     width: 50%;
     border-radius: 20px;
