@@ -58,8 +58,9 @@ function viewEntry(entry_id){
           "x-access-token":token}
     }).then((response)=>response.json())
     .then((data)=>{
-        document.getElementById("comment").innerHTML = data["comment"];
-        modal.style.display ="block";
+      document.getElementById("ttl").innerHTML = data["title"];
+      document.getElementById("comment").innerHTML = data["comment"];
+      modal.style.display ="block";
     })
 
     .catch((error) =>console.log(error))
