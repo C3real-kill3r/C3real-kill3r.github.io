@@ -304,10 +304,10 @@ h5{
 
 .registration{
     width: 420px;
-    height: 550px;
+    height: 557px;
     background: #514b3f;
     color: #fff;
-    top: 50%;
+    top: 60%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
